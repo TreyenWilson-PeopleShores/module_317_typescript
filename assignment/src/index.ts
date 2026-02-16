@@ -75,10 +75,37 @@ class NCycle<T> {
       console.log(`This is a ${this.make} ${this.model} NCycle.`);
     } else if (Array.isArray(this.make) === true && Array.isArray(this.model) === true){
       const index = number ?? 0;
-      console.log(`This NCycle has a ${this.make[index]} ${this.model[index]} at <parameter>.`);
+      console.log(`This NCycle has a ${this.make[index]} ${this.model[index]} at ${index}.`);
     } else{
       console.log("This NCycle was not created properly.");
     }
+  }
+  printAll(): void{
+     if (Array.isArray(this.make) === false && Array.isArray(this.model) === false){
+      console.log(`This is a ${this.make} ${this.model} NCycle.`);
+    } else if (Array.isArray(this.make) === true && Array.isArray(this.model) === true){
+      
+      if(this.make.length === this.model.length){
+      for(let i = 0 ; i< this.make.length; i++){
+        console.log(`This NCycle has a ${this.make[i]} ${this.model[i]} at ${i}.`);
+      }
+      }else{
+        if(this.make.length<this.model.length){
+          for(let i = 0 ; i< this.make.length; i++){
+            console.log(`This NCycle has a ${this.make[i]} ${this.model[i]} at ${i}.`);
+          }
+        } else if(this.model.length<this.make.length){
+          for(let i = 0 ; i< this.model.length; i++){
+            console.log(`This NCycle has a ${this.make[i]} ${this.model[i]} at ${i}.`);
+          }
+        }
+
+      }
+
+
+    } else{
+      console.log("This NCycle was not created properly.");
+    }   
   }
 }
 
