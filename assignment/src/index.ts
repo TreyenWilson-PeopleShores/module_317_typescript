@@ -54,7 +54,7 @@ console.log(myBuick.model);
 
 
 
-class NCyle<T> {
+class NCycle<T> {
   status: string = "stopped";
   make: T|T[];
   model: T|T[];
@@ -72,7 +72,12 @@ class NCyle<T> {
   }
   print(number?: number): void{
     if (Array.isArray(this.make) === false && Array.isArray(this.model) === false){
-
+      console.log(`This is a ${this.make} ${this.model} NCycle.`);
+    } else if (Array.isArray(this.make) === true && Array.isArray(this.model) === true){
+      const index = number ?? 0;
+      console.log(`This NCycle has a ${this.make[index]} ${this.model[index]} at <parameter>.`);
+    } else{
+      console.log("This NCycle was not created properly.");
     }
   }
 }
