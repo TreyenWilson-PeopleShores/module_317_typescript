@@ -1,6 +1,8 @@
 // @ts-check
 
 class Vehicle {
+  //status: "started" | "stopped" =  "stopped";
+
   status: string = "stopped";
   make: string;
   model: string;
@@ -121,7 +123,7 @@ const testCycle2 = new NCycle<string>("This", "That", 4);
 testCycle2.print();
 testCycle2.printAll();
 
-const testCycle3 = new NCycle<string>("Make", 10, 4);
+const testCycle3 = new NCycle<string|number>("Make", 10, 4);
 testCycle3.print(4);
 testCycle3.printAll();
 
@@ -145,3 +147,5 @@ add(testCycle1.make, testCycle5.model[1]);
 
 // Error expected here
 add(testCycle2.make, testCycle4.model[1]);
+
+//I didn't modify these last two lines, as it says an erorr is expected.
